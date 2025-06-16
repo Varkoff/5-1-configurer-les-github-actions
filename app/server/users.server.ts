@@ -25,17 +25,18 @@ export async function addUser({
 		});
 	}
 
-	const newUser = await prisma.user.create({
-		data: {
-			firstName,
-			lastName,
-			slug,
-			age,
-			active,
-		},
-	});
+	// const newUser = await prisma.user.create({
+	// 	data: {
+	// 		firstName,
+	// 		lastName,
+	// 		slug,
+	// 		age,
+	// 		active,
+
+	// 	},
+	// });
 	return {
-		slug: newUser.slug,
+		slug: ""
 	};
 }
 
