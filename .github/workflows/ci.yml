@@ -9,11 +9,9 @@ on:
 jobs:
 
   build:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v4
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+    name: 🐳 build
+    uses: ./.github/workflows/build.yml
+    secrets: inherit
   typecheck:
     runs-on: ubuntu-latest
     steps:
