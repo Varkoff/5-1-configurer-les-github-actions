@@ -9,9 +9,10 @@ services:
       - SMTP_HOST
       - FRONTEND_URL
     container_name: react_router
-    build:
-      context: .
-      dockerfile: Dockerfile
+    # build:
+    #   context: .
+    #   dockerfile: Dockerfile
+    image: algomax/react-router-7:1.0.0
     restart: always
     ports:
       - '3000:3000'
