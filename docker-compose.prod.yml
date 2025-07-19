@@ -1,0 +1,21 @@
+services:
+  react_router:
+    platform: linux/amd64
+    environment:
+      - DATABASE_URL
+      - SMTP_USER
+      - SMTP_PASSWORD
+      - SMTP_PORT
+      - SMTP_SENDER
+      - SMTP_HOST
+      - FRONTEND_URL
+    container_name: react_router
+    # build:
+    #   context: .
+    #   dockerfile: Dockerfile
+    image: algomax/react-router-7:production
+    restart: always
+    ports:
+      - '3000:3000'
+    # volumes:
+    #   - ./image-cache:/app/image-cache
