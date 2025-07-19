@@ -16,6 +16,6 @@ services:
     image: algomax/react-router-7:latest
     restart: always
     ports:
-      - '3000:3000'
+      - '3010:3000'
     # volumes:
     #   - ./image-cache:/app/image-cache
