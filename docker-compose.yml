@@ -1,5 +1,6 @@
 services:
   react_router:
+    platform: linux/amd64
     environment:
       - DATABASE_URL
       - SMTP_USER
@@ -12,7 +13,7 @@ services:
     # build:
     #   context: .
     #   dockerfile: Dockerfile
-    image: algomax/react-router-7:1.0.0
+    image: algomax/react-router-7:production
     restart: always
     ports:
       - '3000:3000'
