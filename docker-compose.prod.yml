@@ -1,5 +1,5 @@
 services:
-  react_router:
+  react_router_production:
     platform: linux/amd64
     environment:
       - DATABASE_URL
@@ -9,7 +9,7 @@ services:
       - SMTP_SENDER
       - SMTP_HOST
       - FRONTEND_URL
-    container_name: react_router
+    container_name: react_router_production
     # build:
     #   context: .
     #   dockerfile: Dockerfile
