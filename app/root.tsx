@@ -26,19 +26,19 @@ export async function loader({ request }: LoaderFunctionArgs) {
 	});
 }
 
-export function meta() {
-	return [
-		{ title: 'Very cool app' },
-		{
-			property: 'og:title',
-			content: 'Very cool app',
-		},
-		{
-			name: 'description',
-			content: 'This app is the best',
-		},
-	];
-}
+// export function meta() {
+// 	return [
+// 		{ title: 'Very cool app' },
+// 		{
+// 			property: 'og:title',
+// 			content: 'Very cool app',
+// 		},
+// 		{
+// 			name: 'description',
+// 			content: 'This app is the best',
+// 		},
+// 	];
+// }
 
 import type { Route } from './+types/root';
 import './app.css';
@@ -79,6 +79,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 				<meta name='viewport' content='width=device-width, initial-scale=1' />
 				<Meta />
 				<Links />
+
 			</head>
 			<body className='bg-gray-200! px-4 py-6 min-h-screen text-black'>
 				<header className='bg-white shadow-md'>
@@ -116,6 +117,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
 								</Link>
 							</>
 						)}
+						<Link
+							to={href('/blog')}
+							className='text-gray-800 font-bold'
+						>
+							Blog
+						</Link>
 					</nav>
 				</header>
 				{children}
