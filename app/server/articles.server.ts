@@ -5,10 +5,14 @@ export interface Article {
 	slug: string;
 	image: string;
 	content: string;
+	dateCreated: Date;
+	author: string;
 }
 
-const articles = [
+const articles: Article[] = [
 	{
+		dateCreated: new Date("2025-01-01"),
+		author: "Virgile",
 		id: '1',
 		title: 'React 19 : Les nouvelles fonctionnalités qui changent tout',
 		description:
@@ -34,6 +38,8 @@ Les Actions simplifient la gestion des formulaires et des mutations de données 
 Cette version marque une étape importante dans l'évolution de React vers un framework full-stack.`,
 	},
 	{
+		dateCreated: new Date("2025-01-08"),
+		author: "Virgile",
 		id: '2',
 		title: 'TailwindCSS 4.0 : Une révolution dans le CSS utilitaire',
 		description:
@@ -62,6 +68,8 @@ La migration depuis v3 est facilitée par des outils automatisés et une compati
 TailwindCSS 4.0 confirme sa position de leader dans l'écosystème CSS moderne.`,
 	},
 	{
+		dateCreated: new Date("2025-01-15"),
+		author: "Virgile",
 		id: '3',
 		title: 'Remix vs Next.js : Quel framework choisir en 2024 ?',
 		description:
@@ -100,6 +108,8 @@ Next.js offre un écosystème riche :
 - **Next.js** : Applications complexes, écosystème Vercel`,
 	},
 	{
+		dateCreated: new Date("2025-01-22"),
+		author: "Virgile",
 		id: '4',
 		title: 'ShadcnUI : La bibliothèque de composants qui révolutionne React',
 		description:
@@ -139,6 +149,8 @@ npx shadcn-ui@latest add button
 ShadcnUI représente l'avenir des bibliothèques de composants : flexibilité maximale avec simplicité d'utilisation.`,
 	},
 	{
+		dateCreated: new Date("2025-01-29"),
+		author: "Virgile",
 		id: '5',
 		title: 'HTML sémantique : Les bonnes pratiques pour 2024',
 		description:

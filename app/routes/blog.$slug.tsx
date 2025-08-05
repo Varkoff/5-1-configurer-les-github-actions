@@ -1,5 +1,6 @@
+import { generateMeta } from "@forge42/seo-tools/remix/metadata";
+import { article } from "@forge42/seo-tools/structured-data/article";
 import { useLoaderData } from 'react-router';
-import { MetaTags } from '~/components/MetaTags';
 import { fetchArticle } from '~/server/articles.server';
 import type { Route } from "./+types/blog.$slug";
 
@@ -13,15 +14,33 @@ export const loader = async ({ params }: Route.LoaderArgs) => {
     return article;
 }
 
+export const meta = ({ data }: Route.MetaArgs) => {
+    const meta = generateMeta({
+        title: data.title,
+        description: data.description,
+        url: data.slug,
+    }, [
+        {
+            "script:ld+json": article({
+                "@type": "Article",
+                headline: data.title,
+                image: data.image,
+                datePublished: data.dateCreated.toISOString(),
+                author: {
+                    "@type": "Person",
+                    name: data.author
+                }
+            })
+        }
+    ])
+    return meta
+}
+
+
 export default function ArticlePage() {
     const article = useLoaderData<typeof loader>()
     return (
         <>
-            <MetaTags
-                title={article.title}
-                description={article.description}
-                imageUrl={article.image}
-            />
             <main className='max-w-4xl mx-auto px-6 py-12'>
                 {/* Header de l'article */}
                 <header className='mb-12'>
